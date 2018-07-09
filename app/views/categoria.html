@@ -1,0 +1,84 @@
+<!-- Segunda Coluna *CONTEÚDO* -->
+<br>
+<center>
+  <img src="images/img_2.png" width="80%" />
+</center>
+
+<br>
+
+
+<div class="article">
+  <img ng-src="{{categoria.icone}}" align="center">
+  <h3>&nbsp {{categoria.nome}}</h3>
+  <br>
+</div>
+
+
+
+<!-- Subcategorias inicio -->
+<br>
+<center>
+  <table id="subcategorias" class="table table-hover">
+    <tr ng-repeat="subcat in subcategorias">
+      <td>
+        <a ui-sref="app.subcategorias({id: subcat.id})">
+          <img src="images\play-button.png"> {{subcat.nome}}
+        </a>
+      </td>
+    </tr>
+  </table>
+</center>
+<!-- fim Subcategorias -->
+<br>
+
+<!-- Titulo -->
+<div style="width:100%; height:35px; margin-bottom:0px;">
+  <div style="display: inline-table; width:100%; border:none">
+    <div style="float:left; width:auto; height:auto; border-bottom:solid 12px #2f3b66;">
+      <h2 style="margin:0px; font-weight:normal; font-size:16pt;">Destaques - {{categoria.nome}}:</h2>
+    </div>
+  </div>
+</div>
+<!-- Titulo FIM -->
+
+<hr>
+
+<br>
+
+<!--Cards para DESTAQUES-->
+<div class="card-deck">
+  <div class="card" ng-repeat="catsEmp in destaques">
+    <a ui-sref="app.empresa({id: catsEmp.empresaId})">
+      <img class="card-img-top" ng-src={{catsEmp.empresa.logo}} alt="Empresa Destaque">
+      <div class="card-body">
+        <h5 class="card-title">{{catsEmp.empresa.nome}}</h5>
+        <p class="card-text">{{catsEmp.empresa.descricao}}</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">{{catsEmp.empresa.telefone}}</small>
+      </div>
+    </a>
+  </div>
+</div>
+<hr>
+<!--Fim cards DESTAQUES-->
+
+
+<!-- Listagem de Empresas -->
+
+<div ng-repeat="emp in empresasCategoria">
+  <div class="media">
+    <a ui-sref="app.empresa({id: emp.empresaId})">
+      <img class="align-self-center mr-3" height="58" ng-src={{emp.empresa.logo}}>
+    </a>
+    <div class="media-body">
+      <h5 class="mt-0">{{emp.empresa.nome}}</h5>
+      {{emp.empresa.descricao}}
+      <br> - {{emp.empresa.endereco}} -
+      <button type="button" class="btn btn-warning">Ver Telefone</button>
+    </div>
+  </div>
+  <hr>
+</div>
+
+<!-- Fim Listagem de Empresas -->

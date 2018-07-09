@@ -1,0 +1,58 @@
+<div class="mainbar">
+    <div class="article">
+        <h2>
+            <b>Resultados</b>
+        </h2>
+    </div>
+    <table id="Categorias">
+        <tr>
+            <th>CATEGORIAS</th>
+        </tr>
+        <tr ng-repeat="categoria in categorias">
+            <td>
+                <a ui-sref="app.categorias({id: categoria.id})">
+                    <img ng-src={{categoria.icone}} height="24">{{categoria.nome}}
+                </a>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <table id="Subcategorias">
+        <tr>
+            <th>SUBCATEGORIAS</th>
+        </tr>
+        <tr ng-repeat="subcategoria in subcategorias | orderBy: categoria">
+            <td>
+                <a ui-sref="app.subcategorias({id: subcategoria.id})">
+                    <img ng-src={{subcategoria.categoria.icone}} height="24">{{subcategoria.categoria.nome}} - {{subcategoria.nome}}
+                </a>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <table id="Empresas">
+        <tr>
+            <th>EMPRESAS</th>
+        </tr>
+        <tr>
+            <td>
+                <!-- Listagem de Empresas -->
+                <div ng-repeat="empresa in empresas">
+                    <div class="media">
+                        <a ui-sref="app.empresa({id: empresa.id})">
+                            <img class="align-self-center mr-3" height="58" ng-src={{empresa.logo}}>
+                        </a>
+                        <div class="media-body">
+                            <h5 class="mt-0">{{empresa.nome}}</h5>
+                            {{empresa.descricao}}
+                            <br> - {{empresa.endereco}} -
+                            <button type="button" class="btn btn-warning">Ver Telefone</button>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <!-- Fim Listagem de Empresas -->
+            </td>
+        </tr>
+    </table>
+</div>

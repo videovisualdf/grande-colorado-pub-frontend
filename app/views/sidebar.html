@@ -1,0 +1,99 @@
+<div>
+  <br>
+  <h3>Regiões</h3>
+
+  <li>
+    <a href="#">Grande Colorado</a>
+  </li>
+  <li>
+    <a href="#">DF 425</a>
+  </li>
+  <li>
+    <a href="#">Região dos Lagos</a>
+  </li>
+  <li>
+    <a href="#">Sobradinho II</a>
+  </li>
+  <li>
+    <a href="#">Setor de Mansões</a>
+  </li>
+  <li>
+    <a href="#">Sobradinho I</a>
+  </li>
+  <br>
+  
+  <div ng-repeat="cat in categorias">
+    <a ui-sref="app.categorias({id: cat.id})">
+      <img align="center" height="24" ng-src="{{cat.icone}}" /> &nbsp {{cat.nome}}
+    </a>
+    <hr>
+  </div>
+  <!--
+  <a href="alimentacao.html">
+    <img src="images\icones\cart.png">&nbsp Alimentação e Bebidas</a>
+  <hr>
+  <a href="#">
+    <img src="images\icones\dog.png">&nbsp Animais e Cia</a>
+  <hr>
+  <a href="#">
+    <img src="images\icones\arte.png">&nbsp Arte e Cultura</a>
+  <hr>
+  <a href="#">
+    <img src="images\icones\house.png">&nbsp Associações/Entidades</a>
+  <hr>
+  <a href="#">
+    <img src="images\icones\car.png">&nbsp Automóveis e CIA</a>
+  <hr>
+  <a href="#">
+    <img src="images\icones\money-bag.png">&nbsp Bancos e Seguradoras</a>
+  <hr>
+  <a href="#">
+    <img src="images\icones\lipstick.png">&nbsp Beleza e Estéticas</a>
+  <hr>
+  <a href="#">
+    <img src="images\icones\coffee.png">&nbsp Cafés e Docerias</a>
+  <hr>
+  <a href="#">
+    <img src="images\icones\wheelbarrow.png">&nbsp Casa e Construção</a>
+  <hr>
+  <a href="#">
+    <img src="images\icones\baby.png">&nbsp Criança e Bebê</a>
+  <hr>
+  <a href="#">
+    <img src="images\icones\bicycle.png">&nbsp Diversão e Lazer</a>
+  <hr>
+  <a href="#">
+    <img src="images\icones\checklist.png">&nbsp Educação</a>
+  <hr>
+  <a href="#">
+    <img src="images\icones\man.png">&nbsp Serviços</a>
+  <hr>
+  <a href="#">
+    <img src="images\icones\running.png">&nbsp Esportes e Fitness</a>
+  <hr>
+  <a href="#">
+    <img src="images\icones\balloons.png">&nbsp Festas e Eventos</a>
+  <hr>
+  <a href="#">
+    <img src="images\icones\hotel.png">&nbsp Hospedagem e Turismo</a>
+  <hr>
+  <a href="#">
+    <img src="images\icones\store.png">&nbsp Lojas e Comércios</a>
+  <hr>
+  <a href="#">
+    <img src="images\icones\hospital.png">&nbsp Medicina e Saúde</a>
+  <hr>
+  <a href="#">
+    <img src="images\icones\cutlery.png">&nbsp Restaurantes e Bares</a>
+  <hr>
+  <a href="#">
+    <img src="images\icones\editor.png">&nbsp Tecnologia e Informática</a>
+  <hr>
+  <a href="#">
+    <img src="images\icones\attachment.png">&nbsp Utilidade Pública</a>
+  <hr>
+  <a href="#">
+    <img src="images\icones\shirt.png">&nbsp Vestuário</a>
+  <hr>
+  -->
+</div>
