@@ -4,12 +4,10 @@
 </center>
 <br>
 <div class="article">
-  <h3>Categoria:
-    <img ng-src="{{subcategoria.categoria.icone}}" align="center"> {{subcategoria.categoria.nome}}</h3>
-  <h3>Subcategoria: {{subcategoria.nome}}</h3>
+  <h5>Categoria: <img ng-src="{{subcategoria.categoria.icone}}" align="center"> {{subcategoria.categoria.nome}}</h5>
+  <h5>Subcategoria: {{subcategoria.nome}}</h5>
   <br>
 </div>
-<br>
 <!-- Titulo -->
 <div style="width:100%; height:35px; margin-bottom:0px;">
   <div style="display: inline-table; width:100%; border:none">
@@ -22,9 +20,9 @@
 <hr>
 <br>
 <!--Cards para DESTAQUES-->
-<div class="card-deck">
+<div class="card-columns">
   <div class="card" ng-repeat="catsEmp in destaques">
-    <a ui-sref="app.empresa({id: catsEmp.empresaId})">
+    <a class="text-dark" ui-sref="app.empresa({id: catsEmp.empresaId})">
       <img class="card-img-top" ng-src={{catsEmp.empresa.logo}} alt="Empresa Destaque">
       <div class="card-body">
         <h5 class="card-title">{{catsEmp.empresa.nome}}</h5>

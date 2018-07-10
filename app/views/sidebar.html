@@ -3,27 +3,27 @@
   <h3>Regiões</h3>
 
   <li>
-    <a href="#">Grande Colorado</a>
+    <a class="text-dark" href="#">Grande Colorado</a>
   </li>
   <li>
-    <a href="#">DF 425</a>
+    <a class="text-dark" href="#">DF 425</a>
   </li>
   <li>
-    <a href="#">Região dos Lagos</a>
+    <a class="text-dark" href="#">Região dos Lagos</a>
   </li>
   <li>
-    <a href="#">Sobradinho II</a>
+    <a class="text-dark" href="#">Sobradinho II</a>
   </li>
   <li>
-    <a href="#">Setor de Mansões</a>
+    <a class="text-dark" href="#">Setor de Mansões</a>
   </li>
   <li>
-    <a href="#">Sobradinho I</a>
+    <a class="text-dark" href="#">Sobradinho I</a>
   </li>
   <br>
   
   <div ng-repeat="cat in categorias">
-    <a ui-sref="app.categorias({id: cat.id})">
+    <a class="text-dark" ui-sref="app.categorias({id: cat.id})">
       <img align="center" height="24" ng-src="{{cat.icone}}" /> &nbsp {{cat.nome}}
     </a>
     <hr>

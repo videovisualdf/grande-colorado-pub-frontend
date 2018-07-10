@@ -17,9 +17,6 @@ angular.module('grande-colorado-pub', ['ui.router','ngResource', 'ngDialog', 'lb
                     'conteudo': {
                         templateUrl : 'views/main.html'
                     },
-                    'anuncio-lateral': {
-                        templateUrl : 'views/anuncio-lateral.html'
-                    },
                     'rodape': {
                         templateUrl : 'views/rodape.html'
                     }

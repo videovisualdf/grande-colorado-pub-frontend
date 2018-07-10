@@ -1,27 +1,18 @@
-<!-- Segunda Coluna *CONTEÚDO* -->
 <br>
 <center>
   <img src="images/img_2.png" width="80%" />
 </center>
-
 <br>
-
-
-<div class="article">
-  <img ng-src="{{categoria.icone}}" align="center">
-  <h3>&nbsp {{categoria.nome}}</h3>
-  <br>
+<div>  
+  <h5>Categoria: <img ng-src="{{categoria.icone}}" align="center"> {{categoria.nome}}</h5>
 </div>
 
-
-
 <!-- Subcategorias inicio -->
-<br>
 <center>
   <table id="subcategorias" class="table table-hover">
     <tr ng-repeat="subcat in subcategorias">
       <td>
-        <a ui-sref="app.subcategorias({id: subcat.id})">
+        <a class="text-dark" ui-sref="app.subcategorias({id: subcat.id})">
           <img src="images\play-button.png"> {{subcat.nome}}
         </a>
       </td>
@@ -46,9 +37,9 @@
 <br>
 
 <!--Cards para DESTAQUES-->
-<div class="card-deck">
+<div class="card-columns">
   <div class="card" ng-repeat="catsEmp in destaques">
-    <a ui-sref="app.empresa({id: catsEmp.empresaId})">
+    <a class="text-dark" ui-sref="app.empresa({id: catsEmp.empresaId})">
       <img class="card-img-top" ng-src={{catsEmp.empresa.logo}} alt="Empresa Destaque">
       <div class="card-body">
         <h5 class="card-title">{{catsEmp.empresa.nome}}</h5>
