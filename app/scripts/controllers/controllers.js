@@ -65,7 +65,7 @@ angular.module('grande-colorado-pub')
     Categoria.find({
       filter: {
         where:{
-          nome: {like: $stateParams.palavra}
+          nome: {like: '.*'+$stateParams.palavra+'.*'}
         },
         order: ['nome ASC']
       }
@@ -88,7 +88,7 @@ angular.module('grande-colorado-pub')
           }
         },
         where:{
-          nome: {like: $stateParams.palavra}
+          nome: {like: '.*'+$stateParams.palavra+'.*'}
         },
         order: ['categoria.nome ASC']
       }
@@ -105,7 +105,7 @@ angular.module('grande-colorado-pub')
       filter: {
         where:{
           ativo: 'S',
-          nome: {like: $stateParams.palavra}
+          nome: {like: '.*'+$stateParams.palavra+'.*'}
         },
         order: ['nome ASC']
       }

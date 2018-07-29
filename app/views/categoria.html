@@ -3,12 +3,32 @@
   <img src="images/img_2.png" width="80%" />
 </center>
 <br>
-<div>  
-  <h5>Categoria: <img ng-src="{{categoria.icone}}" align="center"> {{categoria.nome}}</h5>
+<div>
+  <h5>
+    <img ng-src="{{categoria.icone}}" align="center"> {{categoria.nome}}</h5>
 </div>
 
 <!-- Subcategorias inicio -->
-<center>
+<div class="row" ng-repeat="subcat in subcategorias" ng-if="$index % 3 == 0">
+  <div class="col-xs-12 col-sm-4 col-sm-offset-1">
+    <a class="text-dark" ui-sref="app.subcategorias({id: subcategorias[$index].id})">
+      <img src="images\play-button.png"> {{subcategorias[$index].nome}}
+    </a>
+  </div>
+  <div class="col-xs-12 col-sm-4 col-sm-offset-2">
+    <a class="text-dark" ui-sref="app.subcategorias({id: subcategorias[$index+1].id})" ng-if="subcategorias[$index + 1].nome != null">
+      <img src="images\play-button.png"> {{subcategorias[$index+1].nome}}
+    </a>
+  </div>
+  <div class="col-xs-12 col-sm-4 col-sm-offset-3">
+    <a class="text-dark" ui-sref="app.subcategorias({id: subcategorias[$index+2].id})" ng-if="subcategorias[$index + 2].nome != null">
+      <img src="images\play-button.png"> {{subcategorias[$index+2].nome}}
+    </a>
+  </div>
+</div>
+
+<!--
+  <center>
   <table id="subcategorias" class="table table-hover">
     <tr ng-repeat="subcat in subcategorias">
       <td>
@@ -19,6 +39,7 @@
     </tr>
   </table>
 </center>
+-->
 <!-- fim Subcategorias -->
 <br>
 
@@ -37,8 +58,9 @@
 <br>
 
 <!--Cards para DESTAQUES-->
+<!--
 <div class="card-columns">
-  <div class="card" ng-repeat="catsEmp in destaques">
+  <div class="card" ng-repeat="catsEmp in destaques | unicos : 'empresaId'">
     <a class="text-dark" ui-sref="app.empresa({id: catsEmp.empresaId})">
       <img class="card-img-top" ng-src={{catsEmp.empresa.logo}} alt="Empresa Destaque">
       <div class="card-body">
@@ -52,12 +74,36 @@
   </div>
 </div>
 <hr>
+-->
+<div ng-repeat="catsEmp in destaques | unicos : 'empresaId'">
+  <a class="text-dark" ui-sref="app.empresa({id: catsEmp.empresaId})">
+    <div class="media">
+      <img class="align-self-start mr-3" ng-src={{catsEmp.empresa.logo}} width="30%">
+      <div class="media-body">
+        <h5 class="mt-0">{{catsEmp.empresa.nome}}</h5>
+        <p align="justify">{{catsEmp.empresa.descricao}}</p>
+        <h5 class="mt-0">tel.: {{catsEmp.empresa.telefone}}</h5>
+      </div>
+    </div>
+  </a>
+  <hr>
+</div>
 <!--Fim cards DESTAQUES-->
 
+<div style="width:100%; height:35px; margin-bottom:0px;">
+  <div style="display: inline-table; width:100%; border:none">
+    <div style="float:left; width:auto; height:auto; border-bottom:solid 12px #2f3b66;">
+      <h2 style="margin:0px; font-weight:normal; font-size:16pt;">Empresas - {{categoria.nome}}:</h2>
+    </div>
+  </div>
+</div>
 
+<hr>
+
+<br>
 <!-- Listagem de Empresas -->
 
-<div ng-repeat="emp in empresasCategoria">
+<div ng-repeat="emp in empresasCategoria | unicos : 'empresaId'">
   <div class="media">
     <a ui-sref="app.empresa({id: emp.empresaId})">
       <img class="align-self-center mr-3" height="58" ng-src={{emp.empresa.logo}}>
@@ -66,7 +112,10 @@
       <h5 class="mt-0">{{emp.empresa.nome}}</h5>
       {{emp.empresa.descricao}}
       <br> - {{emp.empresa.endereco}} -
-      <button type="button" class="btn btn-warning">Ver Telefone</button>
+      <br>
+      <a ui-sref="app.empresa({id: emp.empresaId})">
+        <button type="button" class="btn btn-warning">Ver Telefone</button>
+      </a>
     </div>
   </div>
   <hr>
