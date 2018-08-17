@@ -15,20 +15,25 @@
       <li class="nav-item">
         <a class="nav-link" ui-sref="app.anuncieaqui">Anuncie</a>
       </li>
+      <!--
       <li class="nav-item">
         <a class="nav-link" href="https://api.whatsapp.com/send?1=pt_BR&phone=5561991424946">Contato</a>
       </li>
+    -->
       <li class="nav-item">
-        <a class="nav-link" href="#">Sobre nós</a>
+        <a class="nav-link" ui-sref="app.contato">Contato</a>
       </li>
-            <li class="nav-item">
+      <li class="nav-item">
+        <a class="nav-link" ui-sref="app.sobrenos">Sobre nós</a>
+      </li>      
+      <li class="nav-item">
         <a class="nav-link" href="https://grandecolorado-admin.herokuapp.com/">Login</a>
       </li>
     </ul>
     <form class="form-inline mt-2 mt-md-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Pesquise" aria-label="Search" ng-model="buscaPalavra">
       <a class="btn btn-outline-secondary my-2 my-sm-0 text-white" ui-sref="app.resultadobusca({palavra: buscaPalavra})">
-          Pesquise
+        Pesquise
       </a>
     </form>
   </div>

@@ -27,7 +27,8 @@ angular.module('grande-colorado-pub', ['ui.router','ngResource', 'ngDialog', 'lb
                 url:'contato',
                 views: {
                     'conteudo@': {
-                        templateUrl : 'views/contato.html'
+                        templateUrl : 'views/contato.html',
+                        controller  : 'ContatoController'
                     }
                 }
             })
