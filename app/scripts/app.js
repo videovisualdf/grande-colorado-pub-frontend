@@ -22,6 +22,24 @@ angular.module('grande-colorado-pub', ['ui.router','ngResource', 'ngDialog', 'lb
                     }
                 }
             })
+            // rota para a página contato
+            .state('app.contato', {
+                url:'contato',
+                views: {
+                    'conteudo@': {
+                        templateUrl : 'views/contato.html'
+                    }
+                }
+            })
+            // rota para a página sobre nós
+            .state('app.sobrenos', {
+                url:'sobrenos',
+                views: {
+                    'conteudo@': {
+                        templateUrl : 'views/sobrenos.html'
+                    }
+                }
+            })
             // rota para a página anuncie aqui
             .state('app.anuncieaqui', {
                 url:'anuncieaqui',
