@@ -1,7 +1,7 @@
 'use strict';
 angular.module('grande-colorado-pub')
-  .controller('EmpresaController', ['$scope', 'Empresa', 'CategoriasEmpresa', '$stateParams', '$state', 'ngDialog',
-    function ($scope, Empresa, CategoriasEmpresa, $stateParams, $state, ngDialog) {
+  .controller('EmpresaController', ['$scope', 'Empresa', 'CategoriasEmpresa', '$stateParams', '$state', 'ngDialog', '$window',
+    function ($scope, Empresa, CategoriasEmpresa, $stateParams, $state, ngDialog, $window) {
       $scope.showEmpresa = false;
       $scope.message = "Loading ...";
       Empresa.findById({
@@ -10,11 +10,13 @@ angular.module('grande-colorado-pub')
         .$promise.then(
           function (response) {
             $scope.empresa = response;
+            $window.adicionaMarcador(JSON.parse($scope.empresa.coordenada), mapa);
           },
           function (response) {
             $scope.message = "Error: " + response.status + " " + response.statusText;
           }
         );
+
       CategoriasEmpresa.find({
         filter: {
           include: ['empresa', 'categoria', 'subcategoria'],
