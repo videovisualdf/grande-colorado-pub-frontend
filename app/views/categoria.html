@@ -27,19 +27,6 @@
   </div>
 </div>
 
-<!--
-  <center>
-  <table id="subcategorias" class="table table-hover">
-    <tr ng-repeat="subcat in subcategorias">
-      <td>
-        <a class="text-dark" ui-sref="app.subcategorias({id: subcat.id})">
-          <img src="images\play-button.png"> {{subcat.nome}}
-        </a>
-      </td>
-    </tr>
-  </table>
-</center>
--->
 <!-- fim Subcategorias -->
 <br>
 
@@ -58,31 +45,16 @@
 <br>
 
 <!--Cards para DESTAQUES-->
-<!--
-<div class="card-columns">
-  <div class="card" ng-repeat="catsEmp in destaques | unicos : 'empresaId'">
-    <a class="text-dark" ui-sref="app.empresa({id: catsEmp.empresaId})">
-      <img class="card-img-top" ng-src={{catsEmp.empresa.logo}} alt="Empresa Destaque">
-      <div class="card-body">
-        <h5 class="card-title">{{catsEmp.empresa.nome}}</h5>
-        <p class="card-text">{{catsEmp.empresa.descricao}}</p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">{{catsEmp.empresa.telefone}}</small>
-      </div>
-    </a>
-  </div>
-</div>
-<hr>
--->
-<div ng-repeat="catsEmp in destaques | unicos : 'empresaId'">
+<div ng-repeat="catsEmp in destaques | unicos : 'empresaId'" style="background-image: url(images/fundo.png);">
   <a class="text-dark" ui-sref="app.empresa({id: catsEmp.empresaId})">
     <div class="media">
-      <img class="align-self-start mr-3" ng-src={{catsEmp.empresa.logo}} width="30%">
+      <img class="align-self-start mr-3" style="border: 2px solid #000; border-radius: 10px;" ng-src={{catsEmp.empresa.logo}} width="30%">
       <div class="media-body">
         <h5 class="mt-0">{{catsEmp.empresa.nome}}</h5>
         <p align="justify">{{catsEmp.empresa.descricao}}</p>
-        <h5 class="mt-0">tel.: {{catsEmp.empresa.telefone}}</h5>
+        <p align="right">
+          <button class="btn" style="background: #2f3b66; color: #f58634;">{{catsEmp.empresa.telefone}}</button>
+        </p>
       </div>
     </div>
   </a>
@@ -103,19 +75,21 @@
 <br>
 <!-- Listagem de Empresas -->
 
-<div ng-repeat="emp in empresasCategoria | unicos : 'empresaId'">
+<div ng-repeat="emp in empresasCategoria | unicos : 'empresaId'" style="background-image: url(images/fundo.png);">
   <div class="media">
     <a ui-sref="app.empresa({id: emp.empresaId})">
-      <img class="align-self-center mr-3" height="58" ng-src={{emp.empresa.logo}}>
+      <img class="align-self-center mr-3" style="border: 1px solid #000; border-radius: 10px;" height="58" ng-src={{emp.empresa.logo}}>
     </a>
     <div class="media-body">
       <h5 class="mt-0">{{emp.empresa.nome}}</h5>
       {{emp.empresa.descricao}}
       <br> - {{emp.empresa.endereco}} -
       <br>
-      <a ui-sref="app.empresa({id: emp.empresaId})">
-        <button type="button" class="btn btn-warning">Ver Telefone</button>
-      </a>
+      <p align="right">
+        <a ui-sref="app.empresa({id: emp.empresaId})">
+          <button class="btn" style="background: #2f3b66; color: #f58634;">Ver Telefone</button>
+        </a>
+      </p>
     </div>
   </div>
   <hr>

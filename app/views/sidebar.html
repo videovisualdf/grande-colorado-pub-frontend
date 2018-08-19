@@ -1,25 +1,6 @@
 <div>
   <br>
   <h3>Regiões</h3>
-<!--
-  <li>
-    <a class="text-dark" ng-click="alteraRegiao()">Grande Colorado</a>
-  </li>
-  <li>
-    <a class="text-dark" ng-click="alteraRegiao(1)">DF - 425</a>
-  </li>
-  <li>
-    <a class="text-dark" ng-click="alteraRegiao(2)">Região dos Lagos</a>
-  </li>
-  <li>
-    <a class="text-dark" ng-click="alteraRegiao(3)">Sobradinho I</a>
-  </li>
-  <li>
-    <a class="text-dark" ng-click="alteraRegiao(4)">Sobradinho II</a>
-  </li>
-  <br>
--->
-
   <select ng-model="regiao" ng-change="alteraRegiao()">
     <option value="0">Grande Colorado</option>
     <option value="1">DF - 425</option>
@@ -29,7 +10,6 @@
   </select>
   <br>
   <br>
-
   <div ng-repeat="cat in categorias">
     <a class="text-dark" ui-sref="app.categorias({id: cat.id})">
       <img align="center" height="24" ng-src="{{cat.icone}}" /> &nbsp {{cat.nome}}
