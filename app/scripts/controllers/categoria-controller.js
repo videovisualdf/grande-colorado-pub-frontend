@@ -36,7 +36,7 @@ angular.module('grande-colorado-pub')
       regiao = $rootScope.regiaoSelecionada;
 
       //Filtra as empresas destaque de uma determinada categoria 
-      if (regiao == 0) {
+      if ((regiao == 0) || (regiao == 1)) {
         CategoriasEmpresa.find({
           filter: {
             include: [{ relation: 'empresa', scope: { where: { ativo: 'S' } } }, 'categoria', 'subcategoria'],
@@ -87,7 +87,7 @@ angular.module('grande-colorado-pub')
             });
       }
 
-      if (regiao == 0) {
+      if ((regiao == 0) || (regiao == 1)) {
         CategoriasEmpresa.find({
           filter: {
             include: [{ relation: 'empresa', scope: { where: { ativo: 'S' } } }, 'categoria', 'subcategoria'],

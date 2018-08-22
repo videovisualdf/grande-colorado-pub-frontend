@@ -23,7 +23,7 @@ angular.module('grande-colorado-pub')
 
       //Filtra destaques por regiao
 
-      if (regiao == 0) {
+      if ((regiao == 0) || (regiao == 1)) {
         CategoriasEmpresa.find({
           filter: {
             include: [{ relation: 'empresa', scope: { where: { ativo: 'S' } } }, 'categoria', 'subcategoria'],
@@ -75,7 +75,7 @@ angular.module('grande-colorado-pub')
       }
 
       //Filtra todas as empresas dentro da subcategoria
-      if (regiao == 0) {
+      if ((regiao == 0) || (regiao == 1)) {
         CategoriasEmpresa.find({
           filter: {
             include: [{ relation: 'empresa', scope: { where: { ativo: 'S' } } }, 'categoria', 'subcategoria'],
